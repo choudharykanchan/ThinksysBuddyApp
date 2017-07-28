@@ -1704,3 +1704,7 @@
 2017-07-28 15:51:46,504 [Worker-783] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/thinksysuser/Desktop/EclipseWorkspace/IOSWeb/src/main/resources
 2017-07-28 15:51:46,505 [Worker-783] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-07-28 15:51:46,505 [Worker-783] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/thinksysuser/Desktop/EclipseWorkspace/IOSWeb/src/test/resources
+2017-07-28 16:37:57,181 [Worker-796] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-07-28 16:37:57,182 [Worker-796] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/thinksysuser/Desktop/EclipseWorkspace/IOSWeb/src/main/resources
+2017-07-28 16:37:57,183 [Worker-796] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-07-28 16:37:57,183 [Worker-796] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/thinksysuser/Desktop/EclipseWorkspace/IOSWeb/src/test/resources

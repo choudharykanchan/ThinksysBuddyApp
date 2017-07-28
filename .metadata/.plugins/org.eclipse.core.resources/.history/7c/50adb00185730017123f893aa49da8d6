@@ -47,7 +47,7 @@ public void loginToHRPrortal()
 {
 	loginpage = new LoginPage(driver);
 	
-	loginpage.login("choudhary.kanchan", "@abc");
+	loginpage.login("choudhary.kanchan", "@9868060371");
 	
 }
 	
