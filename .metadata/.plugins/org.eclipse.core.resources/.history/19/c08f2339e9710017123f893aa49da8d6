@@ -1,0 +1,42 @@
+package Testcases;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import PageObjects.HomeAfterLogin;
+import PageObjects.ProfilePage;
+import PageObjects.SettingsSubMenu;
+import SetUps.LaunchApp;
+import io.appium.java_client.AppiumDriver;
+
+public class verifyProfile {
+	AppiumDriver driver;
+	@BeforeTest
+	public void setup()
+	{
+		driver= LaunchApp.iOS();
+	}
+	@Test
+	public void verifyemplyeedetails()
+	{
+		HomeAfterLogin homeAfterLogin= new HomeAfterLogin(driver);
+		SettingsSubMenu settingsSubMenu= new SettingsSubMenu(driver);
+		ProfilePage profilePage=new ProfilePage(driver);
+		
+		homeAfterLogin.settingsIcon.click();
+		settingsSubMenu.profile.click();
+		List<WebElement> employeeDetails=profilePage.employeedetails;
+		for(int i=1,j=1;i< employeeDetails.size();i += 2,j++)
+		{
+			
+			
+			System.out.println("No: "+j);
+			System.out.println(employeeDetails.get(i).getText());
+			System.out.println(employeeDetails.get(i+1).getText());
+		}
+
+}
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="129982" started-at="2017-07-03T12:47:20Z" finished-at="2017-07-03T12:49:30Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="129982" started-at="2017-07-03T12:47:20Z" finished-at="2017-07-03T12:49:30Z">
+      <class name="IOSWeb.IOSWeb.AppTest">
+        <test-method status="PASS" signature="testApp()[pri:0, instance:IOSWeb.IOSWeb.AppTest@4909b8da]" name="testApp" duration-ms="9" started-at="2017-07-03T18:17:20Z" finished-at="2017-07-03T18:17:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApp -->
+      </class> <!-- IOSWeb.IOSWeb.AppTest -->
+      <class name="IOSWeb.IOSWeb.TestIOSSafariBrowser">
+        <test-method status="PASS" signature="startBrowser()[pri:0, instance:IOSWeb.IOSWeb.TestIOSSafariBrowser@617c74e5]" name="startBrowser" duration-ms="129956" started-at="2017-07-03T18:17:20Z" finished-at="2017-07-03T18:19:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+      </class> <!-- IOSWeb.IOSWeb.TestIOSSafariBrowser -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

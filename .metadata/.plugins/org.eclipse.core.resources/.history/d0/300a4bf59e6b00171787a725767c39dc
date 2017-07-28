@@ -1,0 +1,30 @@
+package Testcases;
+
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import PageObjects.HomeAfterLogin;
+import SetUps.LaunchApp;
+import io.appium.java_client.AppiumDriver;
+
+public class AfterLogin 
+{
+	AppiumDriver driver;
+	
+	@BeforeTest
+	public void setup()
+	{
+	driver= LaunchApp.iOS();
+	}
+
+
+	@Test
+	public void practiceLocators(driver)
+	{
+	HomeAfterLogin homeAfterLogin= new HomeAfterLogin(driver);
+	homeAfterLogin.settingsIcon.click();
+	homeAfterLogin.searchButton.click();
+	}
+
+}

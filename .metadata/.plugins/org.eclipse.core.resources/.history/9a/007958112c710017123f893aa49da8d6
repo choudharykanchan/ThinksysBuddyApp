@@ -1,0 +1,93 @@
+package PageObjects;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindAll;
+import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSFindBys;
+
+public class HomeAfterLogin {
+	public HomeAfterLogin(AppiumDriver driver)
+	{
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+	
+	@iOSFindBy(xpath="//*[@name=\"Home\"]/XCUIElementTypeButton[1]")
+	public  WebElement settingsIcon;
+	
+	@iOSFindBy(accessibility= "Home")
+	public  WebElement textHome;
+	
+	@iOSFindBy(xpath="//*[@name=\"Home\"]/XCUIElementTypeButton[2]")
+	public WebElement searchButton;
+
+	@iOSFindBy(xpath="//XCUIElementTypeCollectionView[1]//XCUIElementTypeStaticText[1]")
+	public WebElement upcomingevent1;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCollectionView[1]/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[1]")
+	public WebElement upcomingevent2;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCollectionView[1]/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[2]")
+	public WebElement breakfastMenu;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCollectionView[1]/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[2]")
+	public WebElement lunchMenu;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCollectionView[1]/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[2]")
+	public WebElement dinnerMenu;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[3]/XCUIElementTypeTable[1]/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]")
+	public WebElement days1;
+
+	@iOSFindBy(xpath="//XCUIElementTypeTable[1]/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[2]")
+	public WebElement leave1;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[3]/XCUIElementTypeTable[1]/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[1]")
+	public WebElement days2;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[3]/XCUIElementTypeTable[1]/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[2]")
+	public WebElement leave2;
+
+	@iOSFindBy(xpath="//XCUIElementTypeCell[3]/XCUIElementTypeTable[1]/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[1]")
+	public WebElement days3;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeTable[1]/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[2]")
+	public WebElement leave3;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]")
+	public WebElement upcomingHoliday1;
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[2]")
+	public WebElement holiday1Date;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[1]")
+	public WebElement upcomingHoliday2;
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[2]")
+	public WebElement holiday2Date;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[1]")
+	public WebElement upcomingHoliday3;
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[2]")
+	public WebElement holiday3Date;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[4]/XCUIElementTypeStaticText[1]")
+	public WebElement upcomingHoliday4;
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[4]/XCUIElementTypeStaticText[2]")
+	public WebElement holiday4Date;
+	
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[5]/XCUIElementTypeStaticText[1]")
+	public WebElement upcomingHoliday5;
+	@iOSFindBy(xpath="//XCUIElementTypeCell[4]/XCUIElementTypeTable[1]/XCUIElementTypeCell[5]/XCUIElementTypeStaticText[2]")
+	public WebElement holiday5Date;
+	
+ 
+	@iOSFindBys(@iOSFindBy(xpath="//XCUIElementTypeCell[4]"))
+	public List<WebElement> upcomingHolidays;
+	
+	
+}

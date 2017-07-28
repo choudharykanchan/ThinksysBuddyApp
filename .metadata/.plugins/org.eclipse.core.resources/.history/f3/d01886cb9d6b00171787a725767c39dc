@@ -1,0 +1,13 @@
+package Testcases;
+
+import PageObjects.HomeAfterLogin;
+
+public class AfterLogin {
+	@Test
+	public void practiceLocators(driver)
+	{
+	HomeAfterLogin homeAfterLogin= new HomeAfterLogin(driver);
+	homeAfterLogin.settingsIcon.click();
+	homeAfterLogin.searchButton.click();
+	}
+}

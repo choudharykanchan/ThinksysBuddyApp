@@ -1,0 +1,14 @@
+package PageObjects;
+
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+public class LeavesPage {
+	public LeavesPage(AppiumDriver driver)
+	{
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+}

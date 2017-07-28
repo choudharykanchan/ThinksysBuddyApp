@@ -1,0 +1,31 @@
+package PageObjects;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
+
+public class HomeAfterLogin {
+	public HomeAfterLogin(AppiumDriver driver)
+	{
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+	
+	@iOSFindBy(accessibility="Watch")
+	public  WebElement settingsIcon;
+	
+	@iOSFindBy(accessibility="WebDriverAgentRunner")
+	public WebElement searchButton;
+	
+	@Test
+	public void testElements()
+	{
+		settingsIcon.click();
+		searchButton.click();
+		
+	}
+
+}

@@ -1,0 +1,91 @@
+package PageObjects;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
+
+public class LeavesPage {
+	WebDriver driver;
+	WebElement element;
+	List<WebElement> elements;
+	List<String> leaveDetails;
+	public LeavesPage(AppiumDriver driver)
+	{
+		this.driver=driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+	@iOSFindBy(xpath="//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell[1]/XCUIElementTypeStaticText")
+	public List<WebElement> firstLeaveDetails;
+	@iOSFindBy(xpath="//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell[2]/XCUIElementTypeStaticText")
+	public List<WebElement> SecondLeaveDetails;
+	@iOSFindBy(xpath="//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell[3]/XCUIElementTypeStaticText")
+	public List<WebElement> thirdLeaveDetails;
+	
+	public WebElement getleavedetails(String DetailType, String leaveNumber)
+	{
+		switch(DetailType)
+		{
+		case "leaveId":
+		 element=driver.findElement(By.xpath("//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell["+leaveNumber+"]/XCUIElementTypeStaticText[1]"));
+			break;
+			
+		case "leaveDate":
+			element=driver.findElement(By.xpath("//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell["+leaveNumber+"]/XCUIElementTypeStaticText[2]"));
+			break;
+		case "monthAgo":
+			element=driver.findElement(By.xpath("//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell["+leaveNumber+"]/XCUIElementTypeStaticText[3]"));
+			break;
+			
+		case "number":
+			element=driver.findElement(By.xpath("//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell["+leaveNumber+"]/XCUIElementTypeStaticText[4]"));
+			break;
+		case "status":
+			element=driver.findElement(By.xpath("//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell["+leaveNumber+"]/XCUIElementTypeStaticText[5]"));
+			break;
+		case "type":
+			element=driver.findElement(By.xpath("//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell["+leaveNumber+"]/XCUIElementTypeStaticText[6]"));
+			break;
+			
+		}
+		return element;
+	}
+	
+	public List<String> allDetailsOfLeave(String leaveNumber)
+	{
+		System.out.println("Hello0");
+		element=driver.findElement(By.xpath("//XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell["+leaveNumber+"]/XCUIElementTypeStaticText"));
+		element.click();
+		System.out.println(element.getText());
+		elements.get(0).click();
+		System.out.println(elements.get(0).getText());
+		System.out.println("Hello1");
+	for(int i=0;i< elements.size();i++)
+	{
+		System.out.println("Hello2");
+		String detail=elements.get(i).getText();
+		leaveDetails.add(detail);
+		System.out.println(detail);
+		System.out.println("Hello3");
+		
+	}
+	System.out.println("Hello4");
+	return leaveDetails;
+	}
+	
+	
+	
+	/*public List<WebElement> monthlyLeaves(String numberOfMonths)
+	{
+		
+	}*/
+	//static text[1]=leave number,static text[2]=leave date,static text[3]=month ago,static text[4]=No of leaves,static text[5]=Approved or rejected,static text6]=Type of leave
+	//XCUIElementTypeCell[1]= first leave,cell 2=second leave etc.
+}

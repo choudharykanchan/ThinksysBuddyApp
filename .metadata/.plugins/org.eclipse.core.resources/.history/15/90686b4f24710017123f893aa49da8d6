@@ -1,0 +1,72 @@
+package Testcases;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import PageObjects.HomeAfterLogin;
+import PageObjects.SettingsSubMenu;
+import SetUps.LaunchApp;
+import io.appium.java_client.AppiumDriver;
+
+public class AfterLoginPractice {
+	AppiumDriver driver;
+	@BeforeTest
+	public void setup()
+	{
+		driver= LaunchApp.iOS();
+	}
+
+	@Test
+	public void afterLoginPracticeLocators()
+	{
+		HomeAfterLogin homeAfterLogin= new HomeAfterLogin(driver);
+		String event1=homeAfterLogin.upcomingevent1.getText();
+		System.out.println(event1);
+		String event2=homeAfterLogin.upcomingevent2.getText();
+		System.out.println(event2);
+		String menu1=homeAfterLogin.breakfastMenu.getText();
+		System.out.println(menu1);
+		String menu2=homeAfterLogin.lunchMenu.getText();
+		System.out.println(menu2);
+		String menu3=homeAfterLogin.dinnerMenu.getText();
+		System.out.println(menu3);
+		String days1=homeAfterLogin.day1.getText();
+		System.out.println(days1);
+		String leave1=homeAfterLogin.leave1.getText();
+		System.out.println(leave1);
+		String days2=homeAfterLogin.days2.getText();
+		System.out.println(days2);
+		String leave2=homeAfterLogin.leave2.getText();
+		System.out.println(leave2);
+		String days3=homeAfterLogin.days3.getText();
+		System.out.println(days3);
+		String leave3=homeAfterLogin.leave3.getText();
+		System.out.println(leave3);
+		
+		/*SettingsSubMenu settingsobject = new SettingsSubMenu(driver);
+		homeAfterLogin.settingsIcon.click();
+		settingsobject.home.click();
+		homeAfterLogin.settingsIcon.click();
+		settingsobject.profile.click();
+		settingsobject.menu.click();
+		settingsobject.attendance.click();
+		settingsobject.menu.click();
+		settingsobject.leaves.click();
+		settingsobject.menu.click();
+		settingsobject.holidays.click();
+		settingsobject.menu.click();
+		settingsobject.logout.click();*/
+		/*homeAfterLogin.settingsIcon.click();
+		homeAfterLogin.searchButton.click();
+		String text=homeAfterLogin.textHome.getText();
+		if(text.equalsIgnoreCase("Home"))
+		{
+			System.out.println("User is Logged In");
+			
+		}
+		else
+		{
+			System.out.println("User is Not Logged In");
+		}*/
+	}
+}

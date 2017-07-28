@@ -1,0 +1,42 @@
+package Testcases;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import PageObjects.HomeAfterLogin;
+import PageObjects.LeavesPage;
+import PageObjects.ProfilePage;
+import PageObjects.SettingsSubMenu;
+import SetUps.LaunchApp;
+import io.appium.java_client.AppiumDriver;
+
+public class LeavesTestCases {
+	AppiumDriver driver;
+	HomeAfterLogin homeAfterLogin;
+	SettingsSubMenu settingsSubMenu;
+	LeavesPage leavesPage;
+	public void setup()
+	{
+		driver= LaunchApp.iOS();
+		
+		 homeAfterLogin= new HomeAfterLogin(driver);
+		 settingsSubMenu= new SettingsSubMenu(driver);
+	      leavesPage=new LeavesPage(driver);
+	}
+	
+	@Test
+	public void getFirstLeaveDetails()
+	{
+		homeAfterLogin.settingsIcon.click();
+		settingsSubMenu.leaves.click();
+        List<WebElement> firstLeaveDetails= leavesPage.firstLeaveDetails;
+        for(int i=0;i<firstLeaveDetails.size();i++)
+        {
+        	System.out.println(firstLeaveDetails.get(i).getText());
+        }
+        
+	}
+
+}
